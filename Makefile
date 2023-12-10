@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 11:42:13 by asfletch          #+#    #+#              #
-#    Updated: 2023/12/10 13:07:13 by asfletch         ###   ########.fr        #
+#    Updated: 2023/12/10 14:00:28 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,10 @@ SRCS +=	ft_printf/ft_printf.c ft_printf/printf_special.c ft_printf/printf_utils.
 SRCS +=	get_next_line/get_next_line_bonus.c get_next_line/get_next_line_utils_bonus.c \
 	get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
 
-BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstsize.c \
-	ft_lstdelone.c ft_lstmap.c ft_lstiter.c ft_lstclear.c ft_lstnth.c\
+BONUS = linked_list/ft_lstadd_back.c linked_list/ft_lstadd_front.c linked_list/ft_lstlast.c \
+	linked_list/ft_lstnew.c linked_list/ft_lstsize.c linked_list/ft_lstdelone.c \
+	linked_list/ft_lstmap.c linked_list/ft_lstiter.c linked_list/ft_lstclear.c \
+	linked_list/ft_lstnth.c\
 
 BONUS_OBJS = $(BONUS:.c=.o)
 CC = 	gcc
