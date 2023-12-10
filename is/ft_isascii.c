@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 15:04:10 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:39:05 by asfletch         ###   ########.fr       */
+/*   Created: 2023/10/06 15:04:17 by asfletch          #+#    #+#             */
+/*   Updated: 2023/12/10 12:41:35 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../includes/libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_isascii(int c)
 {
-	char	*ptr;
-
-	ptr = s;
-	while (n > 0)
-	{
-		*ptr++ = 0;
-		n--;
-	}
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

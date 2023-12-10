@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 15:04:10 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:39:05 by asfletch         ###   ########.fr       */
+/*   Created: 2023/11/15 09:07:50 by asfletch          #+#    #+#             */
+/*   Updated: 2023/12/10 12:40:54 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../includes/libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list	*ft_lstnew(void	*content)
 {
-	char	*ptr;
+	t_list	*new_node;
 
-	ptr = s;
-	while (n > 0)
-	{
-		*ptr++ = 0;
-		n--;
-	}
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }

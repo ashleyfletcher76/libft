@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 15:04:10 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:39:05 by asfletch         ###   ########.fr       */
+/*   Created: 2023/10/06 16:18:49 by asfletch          #+#    #+#             */
+/*   Updated: 2023/12/10 12:44:18 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../includes/libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*ptr;
+	size_t			i;
+	unsigned char	num1;
+	unsigned char	num2;
 
-	ptr = s;
-	while (n > 0)
+	i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		*ptr++ = 0;
-		n--;
+		num1 = (unsigned char)s1[i];
+		num2 = (unsigned char)s2[i];
+		if (num1 != num2)
+		{
+			return (num1 - num2);
+		}
+		i++;
 	}
+	return (0);
 }
+//compares up to n bytes

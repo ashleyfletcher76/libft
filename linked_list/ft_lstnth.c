@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstnth.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 15:04:10 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:39:05 by asfletch         ###   ########.fr       */
+/*   Created: 2023/11/30 09:03:11 by asfletch          #+#    #+#             */
+/*   Updated: 2023/12/10 12:40:59 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../includes/libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list	*ft_lstnth(t_list *lst, int n)
 {
-	char	*ptr;
+	int	i;
+	int	size;
+	int	target;
 
-	ptr = s;
-	while (n > 0)
+	i = 0;
+	size = ft_lstsize(lst);
+	target = size - n;
+	if (target < 0 || target >= size)
+		return (NULL);
+	while (i < target)
 	{
-		*ptr++ = 0;
-		n--;
+		lst = lst->next;
+		i++;
 	}
+	return (lst);
 }

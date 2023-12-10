@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 15:04:10 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:39:05 by asfletch         ###   ########.fr       */
+/*   Created: 2023/10/10 13:55:41 by asfletch          #+#    #+#             */
+/*   Updated: 2023/12/10 12:43:36 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../includes/libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strdup(const char *s1)
 {
-	char	*ptr;
+	char	*str;
+	int		i;
 
-	ptr = s;
-	while (n > 0)
+	i = 0;
+	str = (char *)malloc(ft_strlen(s1) + 1);
+	if (str == NULL)
+		return (NULL);
+	while (*s1)
 	{
-		*ptr++ = 0;
-		n--;
+		str[i] = *s1;
+		i++;
+		s1++;
 	}
+	str[i] = '\0';
+	return (str);
 }
+//creates space for a copy of s1

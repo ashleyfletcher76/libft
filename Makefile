@@ -3,24 +3,40 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 11:42:13 by asfletch          #+#    #+#              #
-#    Updated: 2023/12/07 14:02:55 by asfletch         ###   ########.fr        #
+#    Updated: 2023/12/10 13:07:13 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = \
-	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
-	ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcpy.c ft_memcmp.c ft_memmove.c ft_memset.c \
-	ft_putchar_fd.c ft_putstr_fd.c ft_strchr.c ft_strdup.c ft_strlcat.c \
-	ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c \
-	ft_toupper.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
-	ft_strmapi.c ft_striteri.c ft_putendl_fd.c ft_putnbr_fd.c ft_printf/ft_printf.c \
-	ft_printf/printf_special.c ft_printf/printf_utils.c ft_printf/custom_utils.c \
-	get_next_line/get_next_line_bonus.c get_next_line/get_next_line_utils_bonus.c \
+SRCS = strings/ft_substr.c strings/ft_strncmp.c strings/ft_strrchr.c \
+	strings/ft_striteri.c strings/ft_strjoin.c strings/ft_strlcpy.c \
+	strings/ft_strnstr.c strings/ft_strtrim.c strings/ft_strchr.c strings/ft_strlcat.c\
+	strings/ft_strdup.c strings/ft_split.c strings/ft_strlen.c strings/ft_strmapi.c \
+
+SRCS += mem_manip/ft_memchr.c mem_manip/ft_memcpy.c mem_manip/ft_memcmp.c \
+	mem_manip/ft_memmove.c mem_manip/ft_memset.c \
+
+SRCS +=	numbers/ft_atoi.c numbers/ft_isalnum.c numbers/ft_isdigit.c \
+
+SRCS += to_write/ft_putchar_fd.c to_write/ft_putstr_fd.c to_write/ft_putendl_fd.c \
+	to_write/ft_putnbr_fd.c
+
+SRCS += convert/ft_tolower.c convert/ft_toupper.c convert/ft_itoa.c \
+
+SRCS += is/ft_isalpha.c is/ft_isascii.c is/ft_isprint.c \
+
+SRCS += alloc/ft_calloc.c \
+
+SRCS +=	ft_bzero.c \
+
+SRCS +=	ft_printf/ft_printf.c ft_printf/printf_special.c ft_printf/printf_utils.c \
+	ft_printf/custom_utils.c \
+
+SRCS +=	get_next_line/get_next_line_bonus.c get_next_line/get_next_line_utils_bonus.c \
 	get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
 
 BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstsize.c \

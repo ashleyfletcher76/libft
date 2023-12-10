@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 15:04:10 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:39:05 by asfletch         ###   ########.fr       */
+/*   Created: 2023/10/18 14:38:20 by asfletch          #+#    #+#             */
+/*   Updated: 2023/12/10 12:44:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../includes/libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*ptr;
+	char			*arr;
+	unsigned int	i;
+	size_t			len;
 
-	ptr = s;
-	while (n > 0)
+	i = 0;
+	if (s == NULL || f == NULL)
+		return (NULL);
+	len = ft_strlen(s);
+	arr = (char *)malloc((len + 1) * sizeof(char));
+	if (arr == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		*ptr++ = 0;
-		n--;
+		arr[i] = f(i, s[i]);
+		i++;
 	}
+	arr[i] = '\0';
+	return (arr);
 }
+//apply f to each character. return arr

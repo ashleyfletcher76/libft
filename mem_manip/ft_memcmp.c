@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 15:04:10 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:39:05 by asfletch         ###   ########.fr       */
+/*   Created: 2023/10/06 15:04:33 by asfletch          #+#    #+#             */
+/*   Updated: 2023/12/10 12:42:07 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../includes/libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*ptr;
+	size_t			i;
+	unsigned char	*src1;
+	unsigned char	*src2;
 
-	ptr = s;
-	while (n > 0)
+	src1 = (unsigned char *)s1;
+	src2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n && src1[i] == src2[i])
 	{
-		*ptr++ = 0;
-		n--;
+		i++;
 	}
+	if (i == n)
+	{
+		return (0);
+	}
+	else
+		return (src1[i] - src2[i]);
 }
+//compares to n bytes and outputs difference in ascii
