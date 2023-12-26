@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+         #
+#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 11:42:13 by asfletch          #+#    #+#              #
-#    Updated: 2023/12/10 14:00:28 by asfletch         ###   ########.fr        #
+#    Updated: 2023/12/26 13:03:32 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,9 @@ SRCS += convert/ft_tolower.c convert/ft_toupper.c convert/ft_itoa.c \
 
 SRCS += is/ft_isalpha.c is/ft_isascii.c is/ft_isprint.c \
 
-SRCS += alloc/ft_calloc.c \
+SRCS += alloc/ft_calloc.c alloc/ft_realloc.c \
+
+SRCS += free/ft_freearr.c \
 
 SRCS +=	ft_bzero.c \
 

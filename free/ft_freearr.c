@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_freearr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 09:59:11 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/26 12:59:54 by asfletch         ###   ########.fr       */
+/*   Created: 2023/12/22 15:23:23 by asfletch          #+#    #+#             */
+/*   Updated: 2023/12/22 15:27:52 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/libft.h"
 
-char	*join_strings(char *stash, char *buffer)
+void	ft_freearr(char **arr)
 {
-	char	*new_stash;
+	int	i;
 
-	if (stash == NULL || buffer == NULL)
-		return (NULL);
-	new_stash = ft_strjoin(stash, buffer);
-	if (new_stash == NULL)
+	i = -1;
+	while (arr[++i])
 	{
-		free (stash);
-		return (NULL);
+		free(arr[i]);
+		arr[i] = NULL;
 	}
-	free (stash);
-	return (new_stash);
+	free (arr);
 }

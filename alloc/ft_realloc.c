@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 09:59:11 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/26 12:59:54 by asfletch         ###   ########.fr       */
+/*   Created: 2023/12/22 14:04:47 by asfletch          #+#    #+#             */
+/*   Updated: 2023/12/22 14:12:28 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/libft.h"
 
-char	*join_strings(char *stash, char *buffer)
+void	*ft_realloc(void *ptr, size_t new_size)
 {
-	char	*new_stash;
+	void	*new_ptr;
+	size_t	copy_size;
 
-	if (stash == NULL || buffer == NULL)
-		return (NULL);
-	new_stash = ft_strjoin(stash, buffer);
-	if (new_stash == NULL)
+	if (new_size == 0)
 	{
-		free (stash);
+		if (ptr)
+			free (ptr);
 		return (NULL);
 	}
-	free (stash);
-	return (new_stash);
+	new_ptr = malloc(new_size);
+	if (!new_ptr)
+		return (NULL);
+	else
+	{
+		copy_size = new_size;
+		ft_memcpy(new_ptr, ptr, copy_size);
+		free (ptr);
+	}
+	return (new_ptr);
 }
