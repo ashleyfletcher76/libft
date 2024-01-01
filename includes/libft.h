@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:00:17 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/26 13:03:04 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/01/01 13:32:00 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnth(t_list *lst, int n);
-void	*ft_realloc(void *ptr, size_t new_size);
+void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 void	ft_freearr(char **arr);
 
 #endif
