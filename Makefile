@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+         #
+#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 11:42:13 by asfletch          #+#    #+#              #
-#    Updated: 2024/01/09 15:20:42 by asfletch         ###   ########.fr        #
+#    Updated: 2024/01/12 08:38:57 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRCS +=	ft_printf/ft_printf.c ft_printf/printf_special.c ft_printf/printf_utils.
 	ft_printf/custom_utils.c \
 
 SRCS += get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
+	get_next_line/get_next_line_bonus.c get_next_line/get_next_line_utils_bonus.c \
 
 BONUS = linked_list/ft_lstadd_back.c linked_list/ft_lstadd_front.c linked_list/ft_lstlast.c \
 	linked_list/ft_lstnew.c linked_list/ft_lstsize.c linked_list/ft_lstdelone.c \
