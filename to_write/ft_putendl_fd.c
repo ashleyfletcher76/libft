@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 13:33:24 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:44:59 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:35:05 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
