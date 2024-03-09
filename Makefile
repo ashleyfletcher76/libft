@@ -6,11 +6,24 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 11:42:13 by asfletch          #+#    #+#              #
-#    Updated: 2024/01/12 08:38:57 by asfletch         ###   ########.fr        #
+#    Updated: 2024/03/09 11:59:12 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
+
+COLOUR_DEFAULT = \033[0m
+COLOUR_BLACK = \033[0;30m
+COLOUR_RED = \033[0;31m
+COLOUR_GREEN = \033[0;32m
+COLOUR_YELLOW = \033[0;33m
+COLOUR_BLUE = \033[0;34m
+COLOUR_MAGENTA = \033[0;35m
+COLOUR_CYAN = \033[0;36m
+COLOUR_WHITE = \033[0;37m
+COLOUR_BOLD = \033[1m
+COLOUR_UNDERLINE = \033[4m
+COLOUR_END = \033[0m
 
 NAME = libft.a
 
@@ -18,6 +31,7 @@ SRCS = strings/ft_substr.c strings/ft_strncmp.c strings/ft_strrchr.c \
 	strings/ft_striteri.c strings/ft_strjoin.c strings/ft_strlcpy.c \
 	strings/ft_strnstr.c strings/ft_strtrim.c strings/ft_strchr.c strings/ft_strlcat.c\
 	strings/ft_strdup.c strings/ft_split.c strings/ft_strlen.c strings/ft_strmapi.c \
+	strings/split_utils.c \
 
 SRCS += mem_manip/ft_memchr.c mem_manip/ft_memcpy.c mem_manip/ft_memcmp.c \
 	mem_manip/ft_memmove.c mem_manip/ft_memset.c \
@@ -50,7 +64,7 @@ BONUS = linked_list/ft_lstadd_back.c linked_list/ft_lstadd_front.c linked_list/f
 
 BONUS_OBJS = $(BONUS:.c=.o)
 CC = 	gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -fsanitize=undefined
 OBJS = 	$(SRCS:.c=.o)
 RM = 	rm -f
 
@@ -58,12 +72,14 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 		ar rcs $(NAME) $(OBJS)
+		echo "$(COLOUR_MAGENTA)Libft compiled successfully!$(COLOUR_END)"
 
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 		rm -f $(NAME)
+		echo "$(COLOUR_MAGENTA)$(COLOUR_UNDERLINE)Libft cleaned successfully!$(COLOUR_END)"
 
 re:		fclean all
 
