@@ -53,3 +53,6 @@ Efficiency and Customization: Developers create custom libraries when they need 
 Code Reusability: If you frequently use certain utility functions (like string or memory operations), a custom library lets you package them into one place for easy access across projects.
 Collaboration: In larger projects, teams can develop libraries for specific purposes (e.g., handling HTTP requests, mathematical operations) that are then used by other developers working on different parts of the application.
 
+## Authors
+
+- **Ashley Fletcher** - *Developer* - [GitHub Profile](https://github.com/ashleyfletcher76)
